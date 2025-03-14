@@ -10,8 +10,9 @@ spring:
         git:
           uri: https://github.com/522654518/yml.git
           username: 522654518
-          password: Zz404722314
+          password: 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
           search-paths: yml
+          default-label: yml
 #注册到EurekaServer
 eureka:
   client:

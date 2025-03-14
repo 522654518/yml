@@ -2,7 +2,9 @@ package cn.wenxuan.feign;
 
 import cn.wenxuan.domain.User;
 import feign.hystrix.FallbackFactory;
+import org.springframework.stereotype.Component;
 
+@Component
 public class UserFeignClientFallbackFactory implements FallbackFactory<UserFeignClient> {
 
     @Override

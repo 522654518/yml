@@ -1,7 +1,7 @@
 spring:
   cloud:
     config:
-      name: application-zuul
+      name: application-pay
       label: yml
       discovery:
         service-id: CONFIG-SERVER
