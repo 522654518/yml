@@ -1,0 +1,36 @@
+server:
+  port: 5000
+spring:
+  application:
+    # 服务名
+    name: pay-service
+#注册到EurekaServer
+eureka:
+  client:
+    serviceUrl:
+# Eureka服务端注册中心的地址
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+#    用ip注册 不使用主机名注册
+    prefer-ip-address: true
+#    实例的唯一标识
+    instance-id: pay:5000
+user-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  hystrix:
+    enabled: true #开启熔断支持
+  ribbon:
+    ReadTimeout: 1000
+    SocketTimeout: 1000
+    ConnectTimeout: 1000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+

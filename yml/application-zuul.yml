@@ -1,0 +1,23 @@
+server:
+  port: 6001
+spring:
+  application:
+    # 服务名
+    name: zuul-server
+#注册到EurekaServer
+eureka:
+  client:
+    serviceUrl:
+      # Eureka服务端注册中心的地址
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    #    用ip注册 不使用主机名注册
+    prefer-ip-address: true
+    #    实例的唯一标识
+    instance-id: zuul:6001
+zuul:
+  prefix: "/servers"
+  ignored-services: "*"
+  routes:
+    pay-service: "/pay/**" #指定pay-server这个服务使用 /pay路径来访问 - 别名
+    order-service: "/order/**" #指定order-server这个服务使用 /order路径来访问

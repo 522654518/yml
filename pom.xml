@@ -15,6 +15,10 @@
         <module>springcloudnetflix-user-service-3000</module>
         <module>springcloudnetflix-common-entity</module>
         <module>springcloudnetflix-product-service-4000</module>
+        <module>springcloudnetflix-pay-service-5000</module>
+        <module>springcloudnetflix-zuul-server-6000</module>
+        <module>springcloudnetflix-config-server-7000</module>
+
     </modules>
 
     <!--1.管理 SpringBoot的jar包-->
@@ -52,6 +56,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.30</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
 
     </dependencies>

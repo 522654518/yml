@@ -1,0 +1,25 @@
+server:
+  port: 7000
+spring:
+  application:
+    # 服务名
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/522654518/yml.git
+          username: 522654518
+          password: Zz404722314
+          search-paths: yml
+#注册到EurekaServer
+eureka:
+  client:
+    serviceUrl:
+      # Eureka服务端注册中心的地址
+      defaultZone: http://localhost:1000/eureka/
+  instance:
+    #    用ip注册 不使用主机名注册
+    prefer-ip-address: true
+    #    实例的唯一标识
+    instance-id: config:7000
