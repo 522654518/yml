@@ -15,18 +15,15 @@ public class UserController {
     @Autowired
     private RestTemplate template;
 
-    /*获取配置文件中的端口号*/
-    @Value("${server.port}")
-    private int port;
+
 
     @GetMapping("/user/{id}")
     public User getById(@PathVariable("id") Long id){
-        return new User(id, "孙悟空", "花果山美猴王" + port);
-    }
+        return new User(id, "孙悟空", "花果山美猴王" );    }
 
     @GetMapping("/userProduct/{id}")
     public String userProduct(@PathVariable("id") Long id){
         ResponseEntity<String> forEntity = template.getForEntity("http://product-service/product/"+id, String.class);
-        return forEntity.getBody()+new User(id, "孙悟空", "花果山美猴王" + port);
+        return forEntity.getBody()+new User(id, "孙悟空", "花果山美猴王" );
     }
 }

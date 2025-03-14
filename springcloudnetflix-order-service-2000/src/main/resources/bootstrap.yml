@@ -2,7 +2,7 @@ spring:
   cloud:
     config:
       name: application-order
-      label: yml
+      label: ymltest
       discovery:
         service-id: CONFIG-SERVER
         enabled: true
